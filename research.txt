@@ -1,0 +1,19 @@
+Zeno Roch
+Fireship io
+
+
+Dark mode for a start
+
+Home
+About
+Course/Lessons
+Articles - markdown
+Projects
+Uses
+Reminder
+
+tools
+- react(next js)
+- tailwind
+- markdown for blogging and content
+- sass
