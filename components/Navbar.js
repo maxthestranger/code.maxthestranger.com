@@ -12,7 +12,7 @@ export default function Navbar() {
     'Projects',
     'Courses',
     'Podcasts',
-    'Sponsor',
+    'Uses',
     'Reminder',
   ];
   const [hovered, setHovered] = useState('');

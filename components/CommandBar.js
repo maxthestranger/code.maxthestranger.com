@@ -100,12 +100,12 @@ export default function CommandBar(props) {
       icon: <i className="ri-mic-line" style={iconStyle} />,
     },
     {
-      id: 'sponsor',
-      name: 'Sponsor',
+      id: 'uses',
+      name: 'Uses',
       shortcut: ['g', 'u'],
-      keywords: 'go-sponsor',
+      keywords: 'go-uses',
       section: 'Go To',
-      perform: () => router.push('/sponsor'),
+      perform: () => router.push('/uses'),
       icon: <i className="ri-computer-line" style={iconStyle} />,
     },
     {
