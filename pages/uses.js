@@ -1,43 +1,50 @@
-import React from 'react'
-import Head from 'next/head'
-import Main from '../layouts/Main'
-import stripHtml from '../lib/strip-html'
-import categories from '../data/uses'
+import React from 'react';
+import Head from 'next/head';
+import Main from '../layouts/Main';
+import stripHtml from '../lib/strip-html';
+import categories from '../data/uses';
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Uses // Zeno Rocha',
-    description: "I often get messages asking about specific pieces of <strong>software or hardware I use</strong>. This page is a <strong>living document</strong> with everything that I'm using nowadays.",
+    title: 'Uses // Max The Stranger',
+    description:
+      "I often get messages asking about specific pieces of <strong>software or hardware I use</strong>. This page is a <strong>living document</strong> with everything that I'm using nowadays.",
     tagline: 'Tools. Apps. Gear.',
     image: '/static/images/uses-bw.jpg',
     gradientColor: 'yellow-pink',
     selectionColor: 'orange',
-  }
+  };
 
-  return { props: meta }
+  return { props: meta };
 }
 
 function Uses(props) {
-  const { title, description, image } = props
+  const { title, description, image } = props;
 
   const renderAll = () => {
     return categories.map((category, index) => {
-      return <div key={index}>
-        <h2>{category.name}</h2>
-        <ul>
-          {category.items.map((item, iIndex) => {
-            return <li key={iIndex}>
-              <a href={item.url} target="_blank">
-                {item.title}
-              </a>
-              <span> - </span>
-              <span dangerouslySetInnerHTML={{ __html: item.description }} />
-            </li>
-          })}
-        </ul>
-      </div>
-    })
-  }
+      return (
+        <div key={index}>
+          <h2>{category.name}</h2>
+          <ul>
+            {category.items.map((item, iIndex) => {
+              return (
+                <li key={iIndex}>
+                  <a href={item.url} target="_blank">
+                    {item.title}
+                  </a>
+                  <span> - </span>
+                  <span
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
+    });
+  };
 
   return (
     <div className="single">
@@ -49,14 +56,14 @@ function Uses(props) {
         <meta content="https://zenorocha.com/uses" property="og:url" />
         <meta content={`https://zenorocha.com${image}`} property="og:image" />
       </Head>
+      {/* <p dangerouslySetInnerHTML={{ __html: description }} />
 
-      <p dangerouslySetInnerHTML={{ __html: description }} />
-
-      {renderAll()}
+      {renderAll()} */}
+      Just coming
     </div>
-  )
+  );
 }
 
-Uses.Layout = Main
+Uses.Layout = Main;
 
-export default Uses
+export default Uses;

@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Main from '../layouts/Main'
-import stripHtml from '../lib/strip-html'
-import { getAllPosts } from '../lib/blog'
-import ListItem from '../components/ListItem'
-import FeaturedArticle from '../components/FeaturedArticle'
-import { AnimateSharedLayout } from 'framer-motion'
+import Head from 'next/head';
+import Main from '../layouts/Main';
+import stripHtml from '../lib/strip-html';
+import { getAllPosts } from '../lib/blog';
+import ListItem from '../components/ListItem';
+import FeaturedArticle from '../components/FeaturedArticle';
+import { AnimateSharedLayout } from 'framer-motion';
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
@@ -15,18 +15,18 @@ export async function getStaticProps() {
     'image',
     'content',
     'description',
-  ])
+  ]);
 
   return {
     props: {
-      title: 'Articles // Zeno Rocha',
+      title: 'Articles // Max The Stranger',
       tagline: 'Stories. Updates. Guides.',
       image: '/static/images/articles-bw.jpg',
       gradientColor: 'yellow-pink',
       selectionColor: 'orange',
       allPosts,
     },
-  }
+  };
 }
 
 function Articles(props) {
@@ -34,40 +34,44 @@ function Articles(props) {
     const featured = [
       'what-ive-learned-after-giving-100-talks',
       'the-technology-stack-i-used-to-build-my-first-mobile-app',
-    ]
+    ];
 
     return props.allPosts
-      .filter(item => featured.includes(item.slug))
+      .filter((item) => featured.includes(item.slug))
       .map((post, index) => {
-        return <FeaturedArticle
-          key={index}
-          index={index}
-          href={`/${post.slug}/`}
-          title={post.title}
-          description={post.description}
-          image={post.image}
-          stats={post.stats}
-          content={post.content}
-        />
-      })
-  }
+        return (
+          <FeaturedArticle
+            key={index}
+            index={index}
+            href={`/${post.slug}/`}
+            title={post.title}
+            description={post.description}
+            image={post.image}
+            stats={post.stats}
+            content={post.content}
+          />
+        );
+      });
+  };
 
   const renderAll = () => {
     return props.allPosts.map((post, index) => {
       if (!post.skip) {
-        return <ListItem
-          key={index}
-          index={index}
-          href={`/${post.slug}/`}
-          title={post.title}
-          date={post.date}
-        />
+        return (
+          <ListItem
+            key={index}
+            index={index}
+            href={`/${post.slug}/`}
+            title={post.title}
+            date={post.date}
+          />
+        );
       }
-    })
-  }
+    });
+  };
 
-  const { title, image } = props
-  const description = `Here you can find all the <strong>${props.allPosts.length} articles</strong> I wrote. You can read about web development, software engineering, and tech career in both English and Portuguese.`
+  const { title, image } = props;
+  const description = `Here you can find all the <strong>${props.allPosts.length} articles</strong> I wrote. You can read about web development, software engineering, and tech career in both English and Portuguese.`;
 
   return (
     <div className="single">
@@ -81,9 +85,8 @@ function Articles(props) {
       </Head>
 
       <AnimateSharedLayout>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
-
-        <h2>Featured Articles</h2>
+        {/* <p dangerouslySetInnerHTML={{ __html: description }} /> */}
+        {/* <h2>Featured Articles</h2>
         <div className="featured-articles">
           {renderFeatured()}
         </div>
@@ -91,12 +94,13 @@ function Articles(props) {
         <h2>All Articles</h2>
         <ul className="article-list">
           {renderAll()}
-        </ul>
+        </ul> */}
+        Coming very soon
       </AnimateSharedLayout>
     </div>
-  )
+  );
 }
 
-Articles.Layout = Main
+Articles.Layout = Main;
 
-export default Articles
+export default Articles;
