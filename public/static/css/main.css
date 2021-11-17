@@ -1,7 +1,7 @@
 :root {
-  --bodyFont: "Biotif", sans-serif;
-  --headingFont: "Neuzeit Grotesk Bold", sans-serif;
-  --codeFont: "Fira Code", monospace;
+  --bodyFont: 'Biotif', sans-serif;
+  --headingFont: 'Neuzeit Grotesk Bold', sans-serif;
+  --codeFont: 'Fira Code', monospace;
 
   --primaryColor: #f2f2f2;
   --secondaryColor: #8f9ba8;
@@ -109,6 +109,15 @@ kbd {
   border-radius: var(--borderRadius);
   transition: background var(--duration) ease-in-out;
   height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-header img {
+  max-width: 100%;
+  width: 34px;
+  height: auto;
 }
 
 .btn-header:hover {
@@ -170,7 +179,7 @@ kbd {
 }
 
 .site-nav span::after {
-  content: "";
+  content: '';
   position: absolute;
   margin: 0px auto;
   top: 18px;
@@ -318,7 +327,7 @@ svg {
 }
 
 .post-image::after {
-  content: "";
+  content: '';
   background-image: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.8) 0,
@@ -1028,7 +1037,7 @@ figure {
 .form:after {
   display: table;
   line-height: 0;
-  content: "";
+  content: '';
 }
 
 .form:after {
@@ -1044,7 +1053,7 @@ figure {
   float: left !important;
 }
 
-.form input[type="email"] {
+.form input[type='email'] {
   border-radius: var(--borderRadius);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -1064,7 +1073,7 @@ figure {
   height: 40px !important;
 }
 
-.form input[type="submit"] {
+.form input[type='submit'] {
   border-radius: var(--borderRadius);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1215,57 +1224,57 @@ code {
    ========================================================================== */
 
 @font-face {
-  font-family: "Neuzeit Grotesk Bold";
-  src: url("/static/font/NeuzeitGrotesk-Bold.woff2") format("woff2"),
-    url("/static/font/NeuzeitGrotesk-Bold.woff") format("woff");
+  font-family: 'Neuzeit Grotesk Bold';
+  src: url('/static/font/NeuzeitGrotesk-Bold.woff2') format('woff2'),
+    url('/static/font/NeuzeitGrotesk-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Fira Code";
-  src: url("/static/font/FiraCode-Regular.woff2") format("woff2"),
-    url("/static/font/FiraCode-Regular.woff") format("woff");
+  font-family: 'Fira Code';
+  src: url('/static/font/FiraCode-Regular.woff2') format('woff2'),
+    url('/static/font/FiraCode-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Biotif";
-  src: url("/static/font/Biotif-Bold.woff2") format("woff2"),
-    url("/static/font/Biotif-Bold.woff") format("woff");
+  font-family: 'Biotif';
+  src: url('/static/font/Biotif-Bold.woff2') format('woff2'),
+    url('/static/font/Biotif-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Biotif";
-  src: url("/static/font/Biotif-SemiBold.woff2") format("woff2"),
-    url("/static/font/Biotif-SemiBold.woff") format("woff");
+  font-family: 'Biotif';
+  src: url('/static/font/Biotif-SemiBold.woff2') format('woff2'),
+    url('/static/font/Biotif-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Biotif";
-  src: url("/static/font/Biotif-Book.woff2") format("woff2"),
-    url("/static/font/Biotif-Book.woff") format("woff");
+  font-family: 'Biotif';
+  src: url('/static/font/Biotif-Book.woff2') format('woff2'),
+    url('/static/font/Biotif-Book.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Biotif";
-  src: url("/static/font/Biotif-Regular.woff2") format("woff2"),
-    url("/static/font/Biotif-Regular.woff") format("woff");
+  font-family: 'Biotif';
+  src: url('/static/font/Biotif-Regular.woff2') format('woff2'),
+    url('/static/font/Biotif-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Biotif";
-  src: url("/static/font/Biotif-RegularItalic.woff2") format("woff2"),
-    url("/static/font/Biotif-RegularItalic.woff") format("woff");
+  font-family: 'Biotif';
+  src: url('/static/font/Biotif-RegularItalic.woff2') format('woff2'),
+    url('/static/font/Biotif-RegularItalic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
