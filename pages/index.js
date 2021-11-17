@@ -1,20 +1,21 @@
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import ShortcutHome from '../components/ShortcutHome'
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ShortcutHome from '../components/ShortcutHome';
 
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Zeno Rocha',
-      description: 'Building world-class products that make developers happy',
-      image: '/static/images/home-bw.jpg',
+      title: 'Max The Stranger',
+      description:
+        'Learning to be pragmatic in building good software that people love to use',
+      image: '/static/images/home-bw.png',
     },
-  }
+  };
 }
 
 function Home(props) {
-  const { title, description, image } = props
+  const { title, description, image } = props;
 
   return (
     <div className="wrapper">
@@ -23,8 +24,11 @@ function Home(props) {
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
-        <meta content="https://zenorocha.com" property="og:url" />
-        <meta content={`https://zenorocha.com${image}`} property="og:image" />
+        <meta content="https://maxthestranger.com" property="og:url" />
+        <meta
+          content={`https://maxthestranger.com${image}`}
+          property="og:image"
+        />
       </Head>
 
       <Navbar />
@@ -33,8 +37,14 @@ function Home(props) {
           <div className="post-container">
             <div className="single">
               <h1>{title}</h1>
-              <p><strong>VP of Developer Experience at WorkOS</strong>.<br/>
-              {description}.</p>
+              <p>
+                <strong>
+                  Currently Unemployed as a dev, Music producer on the side
+                </strong>
+                .
+                <br />
+                {description}.
+              </p>
               <ShortcutHome />
             </div>
           </div>
@@ -42,7 +52,7 @@ function Home(props) {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
