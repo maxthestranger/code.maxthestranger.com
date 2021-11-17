@@ -1,51 +1,48 @@
-import Head from 'next/head';
-import Footer from '../components/Footer';
+import Head from 'next/head'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ShortcutHome from '../components/ShortcutHome'
 
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Max The Stranger',
-      description:
-        'Learning to be as pragmatic in building good software that people love to use',
-      image: '/static/img/home.bw.jpg',
+      title: 'Zeno Rocha',
+      description: 'Building world-class products that make developers happy',
+      image: '/static/images/home-bw.jpg',
     },
-  };
+  }
 }
 
 function Home(props) {
-  const { title, description, image } = props;
+  const { title, description, image } = props
 
   return (
-    <div className="">
+    <div className="wrapper">
       <Head>
         <title>{title}</title>
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
-        <meta content="https://code.maxthestranger.com" property="og:url" />
-        <meta
-          content={`https://code.maxthestranger.com${image}`}
-          property="og:image"
-        />
+        <meta content="https://zenorocha.com" property="og:url" />
+        <meta content={`https://zenorocha.com${image}`} property="og:image" />
       </Head>
 
-      {/* navbar */}
-
+      <Navbar />
       <main className="post main home">
         <div className="post-content">
-          <div className="single">
-            <h1>{title}</h1>
-            <p>
-              <strong>Currently Unemployed</strong>.<br />
-              {description}.
-            </p>
-            {/* shortcut */}
+          <div className="post-container">
+            <div className="single">
+              <h1>{title}</h1>
+              <p><strong>VP of Developer Experience at WorkOS</strong>.<br/>
+              {description}.</p>
+              <ShortcutHome />
+            </div>
           </div>
         </div>
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
