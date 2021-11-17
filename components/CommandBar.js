@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { useRouter } from 'next/router'
+import * as React from 'react';
+import { useRouter } from 'next/router';
 import {
   KBarAnimator,
   KBarProvider,
@@ -8,10 +8,10 @@ import {
   KBarPositioner,
   KBarSearch,
   KBarResults,
-} from 'kbar'
+} from 'kbar';
 
 export default function CommandBar(props) {
-  const router = useRouter()
+  const router = useRouter();
 
   const actions = [
     {
@@ -21,7 +21,7 @@ export default function CommandBar(props) {
       keywords: 'copy-url',
       section: 'General',
       perform: () => navigator.clipboard.writeText(window.location.href),
-      icon: <i className='ri-file-copy-line' style={iconStyle} />,
+      icon: <i className="ri-file-copy-line" style={iconStyle} />,
     },
     {
       id: 'email',
@@ -29,8 +29,8 @@ export default function CommandBar(props) {
       shortcut: ['e'],
       keywords: 'send-email',
       section: 'General',
-      perform: () => window.open('mailto:hi@zenorocha.com', '_blank'),
-      icon: <i className='ri-mail-line' style={iconStyle} />,
+      perform: () => window.open('mailto:maxthestranger@gmail.com', '_blank'),
+      icon: <i className="ri-mail-line" style={iconStyle} />,
     },
     {
       id: 'source',
@@ -38,8 +38,12 @@ export default function CommandBar(props) {
       shortcut: ['s'],
       keywords: 'view-source',
       section: 'General',
-      perform: () => (window.open('https://github.com/zenorocha/zenorocha.com', '_blank')),
-      icon: <i className='ri-braces-line' style={iconStyle} />,
+      perform: () =>
+        window.open(
+          'https://github.com/maxthestranger/maxthestranger.com',
+          '_blank'
+        ),
+      icon: <i className="ri-braces-line" style={iconStyle} />,
     },
     {
       id: 'home',
@@ -48,7 +52,7 @@ export default function CommandBar(props) {
       keywords: 'go-home',
       section: 'Go To',
       perform: () => router.push('/'),
-      icon: <i className='ri-home-5-line' style={iconStyle} />,
+      icon: <i className="ri-home-5-line" style={iconStyle} />,
     },
     {
       id: 'about',
@@ -57,7 +61,7 @@ export default function CommandBar(props) {
       keywords: 'go-about',
       section: 'Go To',
       perform: () => router.push('/about'),
-      icon: <i className='ri-user-line' style={iconStyle} />,
+      icon: <i className="ri-user-line" style={iconStyle} />,
     },
     {
       id: 'articles',
@@ -66,7 +70,7 @@ export default function CommandBar(props) {
       keywords: 'go-articles',
       section: 'Go To',
       perform: () => router.push('/articles'),
-      icon: <i className='ri-ball-pen-line' style={iconStyle} />,
+      icon: <i className="ri-ball-pen-line" style={iconStyle} />,
     },
     {
       id: 'projects',
@@ -74,17 +78,17 @@ export default function CommandBar(props) {
       shortcut: ['g', 'p'],
       keywords: 'go-projects',
       section: 'Go To',
-      perform: () => (router.push('/projects')),
-      icon: <i className='ri-lightbulb-line' style={iconStyle} />,
+      perform: () => router.push('/projects'),
+      icon: <i className="ri-lightbulb-line" style={iconStyle} />,
     },
     {
-      id: 'talks',
-      name: 'Talks',
+      id: 'courses',
+      name: 'Courses',
       shortcut: ['g', 't'],
-      keywords: 'go-talks',
+      keywords: 'go-courses',
       section: 'Go To',
-      perform: () => (router.push('/talks')),
-      icon: <i className='ri-slideshow-2-line' style={iconStyle} />,
+      perform: () => router.push('/courses'),
+      icon: <i className="ri-slideshow-2-line" style={iconStyle} />,
     },
     {
       id: 'podcasts',
@@ -92,17 +96,17 @@ export default function CommandBar(props) {
       shortcut: ['g', 'c'],
       keywords: 'go-podcasts',
       section: 'Go To',
-      perform: () => (router.push('/podcasts')),
-      icon: <i className='ri-mic-line' style={iconStyle} />,
+      perform: () => router.push('/podcasts'),
+      icon: <i className="ri-mic-line" style={iconStyle} />,
     },
     {
-      id: 'uses',
-      name: 'Uses',
+      id: 'sponsor',
+      name: 'Sponsor',
       shortcut: ['g', 'u'],
-      keywords: 'go-uses',
+      keywords: 'go-sponsor',
       section: 'Go To',
-      perform: () => (router.push('/uses')),
-      icon: <i className='ri-computer-line' style={iconStyle} />,
+      perform: () => router.push('/sponsor'),
+      icon: <i className="ri-computer-line" style={iconStyle} />,
     },
     {
       id: 'reminder',
@@ -110,8 +114,8 @@ export default function CommandBar(props) {
       shortcut: ['g', 'r'],
       keywords: 'go-reminder',
       section: 'Go To',
-      perform: () => (router.push('/reminder')),
-      icon: <i className='ri-time-line' style={iconStyle} />,
+      perform: () => router.push('/reminder'),
+      icon: <i className="ri-time-line" style={iconStyle} />,
     },
     {
       id: 'github',
@@ -119,8 +123,8 @@ export default function CommandBar(props) {
       shortcut: ['f', 'g'],
       keywords: 'go-github',
       section: 'Follow',
-      perform: () => (window.open('https://github.com/zenorocha', '_blank')),
-      icon: <i className='ri-github-line' style={iconStyle} />,
+      perform: () => window.open('https://github.com/maxthestranger', '_blank'),
+      icon: <i className="ri-github-line" style={iconStyle} />,
     },
     {
       id: 'twitter',
@@ -128,8 +132,9 @@ export default function CommandBar(props) {
       shortcut: ['f', 't'],
       keywords: 'go-twitter',
       section: 'Follow',
-      perform: () => (window.open('https://twitter.com/zenorocha', '_blank')),
-      icon: <i className='ri-twitter-line' style={iconStyle} />,
+      perform: () =>
+        window.open('https://twitter.com/maxthestranger', '_blank'),
+      icon: <i className="ri-twitter-line" style={iconStyle} />,
     },
     {
       id: 'linkedin',
@@ -137,8 +142,9 @@ export default function CommandBar(props) {
       shortcut: ['f', 'l'],
       keywords: 'go-linkedin',
       section: 'Follow',
-      perform: () => (window.open('https://linkedin.com/in/zenorocha', '_blank')),
-      icon: <i className='ri-linkedin-line' style={iconStyle} />,
+      perform: () =>
+        window.open('https://linkedin.com/in/maxthestranger', '_blank'),
+      icon: <i className="ri-linkedin-line" style={iconStyle} />,
     },
     {
       id: 'instagram',
@@ -146,28 +152,33 @@ export default function CommandBar(props) {
       shortcut: ['f', 'i'],
       keywords: 'go-instagram',
       section: 'Follow',
-      perform: () => (window.open('https://instagram.com/zenorocha', '_blank')),
-      icon: <i className='ri-instagram-line' style={iconStyle} />,
+      perform: () =>
+        window.open('https://instagram.com/max_the_stranger', '_blank'),
+      icon: <i className="ri-instagram-line" style={iconStyle} />,
     },
-  ]
+  ];
 
-  return <KBarProvider actions={actions}>
-    <KBarPortal>
-      <KBarPositioner style={positionerStyle}>
-        <KBarAnimator className="kbar-blur" style={animatorStyle}>
-          <KBarSearch style={searchStyle} placeholder='Type a command or search…' />
-          <RenderResults />
-        </KBarAnimator>
-      </KBarPositioner>
-    </KBarPortal>
+  return (
+    <KBarProvider actions={actions}>
+      <KBarPortal>
+        <KBarPositioner style={positionerStyle}>
+          <KBarAnimator className="kbar-blur" style={animatorStyle}>
+            <KBarSearch
+              style={searchStyle}
+              placeholder="Type a command or search…"
+            />
+            <RenderResults />
+          </KBarAnimator>
+        </KBarPositioner>
+      </KBarPortal>
 
-    {props.children}
-
-  </KBarProvider>
+      {props.children}
+    </KBarProvider>
+  );
 }
 
 function RenderResults() {
-  const { results } = useDeepMatches()
+  const { results } = useDeepMatches();
 
   return (
     <KBarResults
@@ -180,7 +191,7 @@ function RenderResults() {
         )
       }
     />
-  )
+  );
 }
 
 const ResultItem = React.forwardRef(({ action, active }, ref) => {
@@ -202,8 +213,8 @@ const ResultItem = React.forwardRef(({ action, active }, ref) => {
         </div>
       ) : null}
     </div>
-  )
-})
+  );
+});
 
 const positionerStyle = {
   position: 'fixed',
@@ -215,7 +226,7 @@ const positionerStyle = {
   padding: '14vh 16px 16px',
   background: 'rgba(0, 0, 0, .8)',
   boxSizing: 'border-box',
-}
+};
 
 const animatorStyle = {
   maxWidth: '600px',
@@ -223,7 +234,7 @@ const animatorStyle = {
   color: 'var(--primaryColor)',
   borderRadius: '8px',
   overflow: 'hidden',
-}
+};
 
 const searchStyle = {
   padding: '12px 16px',
@@ -235,7 +246,7 @@ const searchStyle = {
   margin: 0,
   background: 'var(--commandColor)',
   color: 'var(--primaryColor)',
-}
+};
 
 const groupNameStyle = {
   padding: '8px 16px',
@@ -243,37 +254,37 @@ const groupNameStyle = {
   textTransform: 'uppercase',
   letterSpacing: '1px',
   background: 'var(--commandColor)',
-}
+};
 
 const iconStyle = {
   fontSize: '20px',
   position: 'relative',
   top: '-2px',
-}
+};
 
 const kbdStyle = {
   padding: '4px 8px',
   textTransform: 'uppercase',
   color: 'var(--secondaryColor)',
   background: 'rgba(255, 255, 255, .1)',
-}
+};
 
 const shortcutStyle = {
   display: 'grid',
   gridAutoFlow: 'column',
-  gap: '4px'
-}
+  gap: '4px',
+};
 
 const actionStyle = {
   display: 'flex',
   gap: '8px',
-  alignItems: 'center'
-}
+  alignItems: 'center',
+};
 
 const actionRowStyle = {
   display: 'flex',
-  flexDirection: 'column'
-}
+  flexDirection: 'column',
+};
 
 const getResultStyle = (active) => {
   return {
@@ -285,5 +296,5 @@ const getResultStyle = (active) => {
     margin: 0,
     cursor: 'pointer',
     color: active ? 'var(--primaryColor)' : 'var(--secondaryColor)',
-  }
-}
+  };
+};
