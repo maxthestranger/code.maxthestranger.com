@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import ShortcutHome from '../components/ShortcutHome';
 
 export async function getStaticProps() {
   return {
@@ -31,7 +29,7 @@ function Home(props) {
         />
       </Head>
 
-      <Navbar />
+      {/* navbar */}
 
       <main className="post main home">
         <div className="post-content">
@@ -41,7 +39,7 @@ function Home(props) {
               <strong>Currently Unemployed</strong>.<br />
               {description}.
             </p>
-            {/* <ShortcutHome /> */}
+            {/* shortcut */}
           </div>
         </div>
       </main>
